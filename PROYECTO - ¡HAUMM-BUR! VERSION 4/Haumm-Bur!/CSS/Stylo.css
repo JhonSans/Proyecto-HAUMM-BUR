@@ -1,0 +1,468 @@
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+@font-face {
+    font-family: "AntiqueCherry-PersonalUse";
+    src: url("../FUENTE/AntiqueCherry.eot");
+    /* IE9 Compat Modes */
+    src: url("../FUENTE/AntiqueCherry.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../FUENTE/AntiqueCherry.otf") format("opentype"), /* Open Type Font */
+    url("../FUENTE/AntiqueCherry.svg") format("svg"), /* Legacy iOS */
+    url("../FUENTE/AntiqueCherry.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../FUENTE/AntiqueCherry.woff") format("woff"), /* Modern Browsers */
+    url("../FUENTE/AntiqueCherry.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*-----MAQUETACION-----*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1d1f20;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+main {
+    width: 100%;
+    height: 966px;
+    background-image: url("../IMA/BUm.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-2 {
+    width: 100%;
+    height: 0px;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    float: left;
+    width: 100%;
+    height: 1800px;
+    margin-top: 0px;
+    background-color: gray;
+}
+
+.section-2 {
+    float: left;
+    width: 100%;
+    height: 790px;
+    background-color: gray;
+}
+
+aside {
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+footer {
+    clear: both;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(235, 110, 112, 1.00);
+    text-align: center;
+    color: white;
+    line-height: 50px;
+    font-style: italic;
+}
+
+.rig {
+    float: right;
+}
+
+
+/*-----NAV-BAR-----*/
+
+.logo {
+    height: 40px;
+    width: 45px;
+    position: absolute;
+    -webkit-filter: opacity(50%);
+    filter: opacity(50%);
+}
+
+.text-title-primary {
+    font-family: 'AntiqueCherry-PersonalUse';
+    font-size: 100px;
+    color: rgba(0, 0, 0, 1.00);
+    text-decoration: none;
+}
+
+.text-title-primary:hover {
+    color: rgba(63, 63, 63, 1.00);
+    text-decoration: none;
+}
+
+.link-text {
+    color: rgba(255, 255, 255, 1.00);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 100em;
+}
+
+main .container {
+    padding: 1em;
+}
+
+.h1 {
+    border: 1px solid rgba(52, 52, 52, 0.96);
+    width: 600px;
+    margin: 20px 20px;
+}
+
+p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40em;
+}
+
+.screen-reader-text {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+}
+
+nav {
+    background: rgba(223, 169, 35, 1.00);
+    color: #1d1f20;
+    left: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+nav input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+nav label {
+    cursor: pointer;
+    display: block;
+    font: 2em/1 "Antique Cherry";
+    padding: 0.5em;
+}
+
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+    background: #1d1f20;
+    border-radius: 0.05em;
+    height: 0.2em;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+#menu-icon {
+    display: inline-block;
+    margin: 1.2em 0;
+    max-width: 1em;
+    position: relative;
+}
+
+nav label #menu-icon {
+    float: right;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+#menu-icon:before {
+    top: -0.4em;
+}
+
+#menu-icon:after {
+    bottom: -0.4em;
+}
+
+nav input[type=checkbox]:checked+label #menu-icon {
+    background: transparent;
+}
+
+nav input[type=checkbox]:checked+label #menu-icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked+label #menu-icon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+nav input:checked~#overlay {
+    background: rgba(223, 169, 35, 1.00);
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+    overflow: hidden;
+}
+
+nav ul {
+    font-size: 1.5em;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+nav input:checked~ul {
+    margin: 1em;
+    max-height: inherit;
+    opacity: 1;
+}
+
+nav ul>li {
+    margin: 0.5em 0;
+}
+
+nav ul a {
+    color: #1d1f20!important;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    text-shadow: 2px 0px 3px;
+    text-decoration: none;
+    transition: 0.6s;
+    font-size: 20px;
+    color: rgba(38, 38, 38, 1.00);
+}
+
+nav ul#social-media>li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+
+/*-----BOTON-FLOTANTE-----*/
+
+.simplescrollup__button {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    transition: 1s all;
+    z-index: 10000;
+	color: rgba(223, 169, 35, 1.00);
+}
+.simplescrollup__button--show {
+    transform: translateX(0);
+}
+.simplescrollup__button--hide {
+    transform: translateX(100px);
+}
+
+
+/*-----CONTENT-----*/
+
+.form-1 {
+    background: rgba(221, 188, 49, 1.00);
+    width: 50%;
+    height: 600px;
+    float: left;
+    padding: 5%;
+}
+
+.form-2 {
+    background: rgba(255, 112, 114, 1.00);
+    width: 50%;
+    height: 600px;
+    float: left;
+    padding: 5%;
+}
+
+.form-3 {
+    background: rgba(236, 236, 236, 1.00);
+    width: 100%;
+    height: 792px;
+    padding: 5%;
+}
+
+.haum-image {
+    width: 60%;
+    height: 100%;
+}
+
+.haum-class {
+    width: 100%;
+    height: 100%;
+}
+
+.haum-text {
+    color: aliceblue;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.text-title {
+    font-family: 'AntiqueCherry-PersonalUse';
+    font-size: 130px;
+    display: inline-block;
+    padding: 10px;
+    color: rgba(0, 0, 0, 1.00);
+}
+
+
+/*-----RESPONSIVE-----*/
+
+ul.navbar li {
+    float: left;
+}
+
+ul.navbar li.rig {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    ul.navbar li.rig,
+    ul.navbar li {
+        float: none;
+    }
+    .buri {
+        visibility: hidden;
+        display: none;
+    }
+    ul.navbar li a:hover {
+        background-color: rgba(200, 143, 0, 1.00);
+    }
+    .contenedor {
+        width: 100%;
+        margin: auto;
+    }
+    main {
+        width: 100%;
+        height: 200px;
+        background: none;
+    }
+    section {
+        width: 100%;
+        height: 2000px;
+    }
+    .navbar {
+        -webkit-box-shadow: 0px 36px 27px -16px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 26px 27px -16px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 10px 25px -16px black;
+    }
+    ul li a:hover {
+        color: white;
+        text-shadow: 0px 0px 3.5px black;
+    }
+    .form-1 {
+        width: 100%;
+        height: 250px;
+        float: none;
+    }
+    .form-2 {
+        width: 100%;
+        height: 250px;
+        float: none;
+    }
+    .haum-image {
+        width: 10px;
+        height: 10px;
+    }
+    .haum-class {
+        width: 100px;
+        border: solid red;
+    }
+    .haum-text {
+        color: aliceblue;
+        font-size: 5px;
+        display: inline-block;
+    }
+    .text-title {
+        font-family: 'AntiqueCherry-PersonalUse';
+        font-size: 10px;
+        display: inline-block;
+        padding: 10px;
+        color: rgba(0, 0, 0, 1.00);
+    }
+}
+
+
+/*-----INPUT-----*/
+
+input[type=text],
+[type=password],
+[type=email] {
+    width: 400px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Atributos form */
+
+form {
+    color: black;
+    text-align: center;
+    margin: 20px 300px 20px 300px;
+}
+
+input[type=submit] {
+    background: rgba(221, 188, 49, 1.00);
+    margin: 10px 50px 0px 50px;
+    text-decoration: none;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    background: rgba(250, 188, 49, 1.00);
+    box-shadow: 0px 0px 8px rgb(146, 146, 146);
+}
